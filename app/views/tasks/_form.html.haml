@@ -1,0 +1,16 @@
+= form_with(model: @task, local: true) do |f|
+  .field
+    = f.label :description, class: 'label'
+    .control
+      = f.text_field :description, class: 'input'
+  .field
+    = f.label :due_date, class: 'label'
+    .control
+      = f.date_select :due_date, class: 'input'
+  .field
+    .control
+      = f.label :done, class: 'checkbox'
+      =f.check_box :done, class: 'checkbox'
+  .field
+    .control
+      = f.submit class: 'button is-primary'
