@@ -9,5 +9,18 @@
     = javascript_pack_tag 'application', { :data => {:turbolinks => {:track => 'reload'}}}
 
   %body
-    -# TODO: Adicionar os flash de notificações
-    = yield
+    .hero.is-fullheight.bg
+      .hero-body
+        .container.is-centered
+          .columns.is-centered{:style => 'opacity: 0.85'}
+            .column.is-11
+              .card
+                .card-content
+                  .content
+                    = yield
+
+
+    -# a- flash.each do |type, message|
+      .notification.is-#{type == 'alert' ? 'danger' : 'success'}
+        .delete
+        = message

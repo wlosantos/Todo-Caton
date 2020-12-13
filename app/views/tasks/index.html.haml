@@ -1,5 +1,18 @@
-- @tasks.each do |task|
-  %table.table.is-fullwidth
+.columns.mb-2
+  .column.is-8
+    %h1.title.size-4 Tarefas
+  .column.is4.has-text-right
+    = link_to '+ Tarefa', new_task_path, class: 'button is-success'
+
+- if @tasks.any?
+  %table.is-table.fullwidth
     %thead
       %tr
+        %th Descrição
+        %th Prazo
         %th
+    %tbody
+      - @tasks.each do |task|
+        = render 'table_row', task: task
+- else
+  %p Nenhuma tarefa foi cadastrada!
