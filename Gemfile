@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'haml'
 gem 'haml-rails'
+gem 'rails-i18n'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 

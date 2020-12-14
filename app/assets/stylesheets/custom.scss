@@ -1,0 +1,12 @@
+html, body {
+  height: 100%;
+  background-color: rgb(50, 129, 186);
+}
+.bg{
+  background-image: image-url('bg.jpg');
+  background-position: center;
+  background-size: cover;
+}
+.text-muted{
+  color:#8f8f8f; 
+}
