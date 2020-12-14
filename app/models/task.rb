@@ -1,5 +1,11 @@
 class Task < ApplicationRecord
 
+  belongs_to :parent, class_name: 'Task', optional: true
+  has_many :sub_tasks, class_name: 'Task', foreign_key: :parent_id, dependent: :destroy
+
+  scope :only_parents, -> { where(parent_id: nil)}
+
+
   validates :description, presence: { message: 'é um campo obrigatório!!!' }
   validates :done, inclusion: { in: [true, false] }
 

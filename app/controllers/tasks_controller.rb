@@ -3,7 +3,7 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:edit, :update, :destroy]
 
   def index
-    @tasks = Task.orderPrazo
+    @tasks = Task.only_parents.orderPrazo
   end
 
   def new
