@@ -1,4 +1,4 @@
-= form_with(model: @task, local: true) do |f|
+= form_with(model: task, local: true) do |f|
   .field
     = f.label :description, class: 'label'
     .control
@@ -9,8 +9,10 @@
       = f.date_select :due_date, class: 'input'
   .field
     .control
+      = f.check_box :done, class: 'checkbox'
       = f.label :done, class: 'checkbox'
-      =f.check_box :done, class: 'checkbox'
-  .field
+  .field.is-grouped
     .control
-      = f.submit class: 'button is-primary'
+      = f.submit class: 'button is-primary', data: { disable_with: 'Salvando...'}
+    .control
+      = link_to 'Cancelar', tasks_path, class: 'button is-light'
