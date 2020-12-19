@@ -3,6 +3,7 @@
     %h1.title.size-4 Tarefas
   .column.is4.has-text-right
     = link_to '+ Tarefa', new_task_path, class: 'button is-success'
+    = link_to 'Exportar CSV', export_csv_tasks_path, class: 'button is-primary'
 
 - if @tasks.any?
   %table.table#tableless.is-fullwidth
