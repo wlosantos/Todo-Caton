@@ -1,24 +1,24 @@
-# README
+# Gerenciador de Tarefas (Todo list)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<small>curso:</small> Lucas Caton - (https://www.lucascaton.com.br/cursos/)
 
-Things you may want to cover:
+![telaGeral](/Users/wendellopes/Desktop/nvProg/caton/todo/app/assets/images/telaGeral.png)
 
-* Ruby version
+Este é um projeto simples de Todolist (gerenciador de tarefas) onde gerenciamos as atividades com tarefas principais com suas respectivas sub-tarefas, Ele possui boas abordagem de aprendizados, seja no back-end ou no front-end. 
 
-* System dependencies
+### Tecnologia utilizada:
 
-* Configuration
+* Ruby on Rails
+* Haml
+* Framework Bulma (css)
 
-* Database creation
+### Aprendizado:
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Auto associação (a sub-tarefa e a tarefa pertencem a mesma tabela)
+* O uso de scope collection na rota
+* A utilização do concerne como module do controller
+* Exportação das tarefas em arquivo csv 
+* Autenticação de usuário via http
+* Estilização basiadas em condicionais
+* Prática de escrita em Haml 
+* Prática de css com Bulma
