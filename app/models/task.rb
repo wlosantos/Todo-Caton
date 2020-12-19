@@ -20,10 +20,14 @@ class Task < ApplicationRecord
   end
 
   def symbol
-    case status
-    when 'pending' then '»'
-    when 'done'    then '√'
-    when 'expired' then 'x'
+    if sub_task?
+      'fas fa-angle-right'
+    else
+      case status
+      when 'pending' then 'fas fa-tasks'
+      when 'done' then 'fas fa-check'
+      when 'expired' then 'fas fa-times'
+      end
     end
   end
 

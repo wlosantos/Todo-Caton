@@ -1,7 +1,7 @@
 !!! 5
 %html
   %head
-    %title Base Config
+    %title Gerenciador de Tarefas
     = csrf_meta_tags
     = csp_meta_tag
 
@@ -12,15 +12,18 @@
     .hero.is-fullheight.bg
       .hero-body
         .container.is-centered
-          .columns.is-centered{:style => 'opacity: 0.85'}
+          .columns.is-centered{:style => 'opacity: 0.9'}
             .column.is-11
               .card
                 .card-content
                   .content
+                    -if notice.present?
+                      .notification.is-success
+                        .delete
+                        = notice
+                    -if alert.present?
+                      .notification.is-danger
+                        .delete
+                        = alert
+
                     = yield
-
-
-    -# a- flash.each do |type, message|
-      .notification.is-#{type == 'alert' ? 'danger' : 'success'}
-        .delete
-        = message
