@@ -1,3 +1,7 @@
-%h1.title.size-4 Nova tarefa
+%h1.title.size-4
+  -if params[:parent_id].present?
+    Nova sub-tareva
+  -else
+    Nova tarefa
 
 = render 'form', task: @task

@@ -11,6 +11,14 @@ class Task < ApplicationRecord
 
   scope :orderPrazo, -> { order(:due_date, :description)}
 
+  def parent?
+    parent_id.nil?
+  end
+
+  def sub_task?
+    !parent?
+  end
+
   def symbol
     case status
     when 'pending' then '»'

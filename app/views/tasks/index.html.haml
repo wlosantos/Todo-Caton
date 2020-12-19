@@ -5,7 +5,7 @@
     = link_to '+ Tarefa', new_task_path, class: 'button is-success'
 
 - if @tasks.any?
-  %table.is-table.fullwidth
+  %table.table#tableless.is-fullwidth
     %thead
       %tr
         %th Descrição
@@ -14,5 +14,8 @@
     %tbody
       - @tasks.each do |task|
         = render 'table_row', task: task
+
+        - task.sub_tasks.order(:due_date).each do |sub_task|
+          = render 'table_row', task: sub_task
 - else
   %p Nenhuma tarefa foi cadastrada!
