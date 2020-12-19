@@ -1,0 +1,19 @@
+= form_with(model: task, local: true) do |f|
+  = f.hidden_field :parent_id, value: task.parent_id || params[:parent_id]
+  .field
+    = f.label :description, class: 'label'
+    .control
+      = f.text_field :description, class: 'input'
+  .field
+    = f.label :due_date, class: 'label'
+    .control
+      = f.date_select :due_date, class: 'input'
+  .field
+    .control
+      = f.check_box :done, class: 'checkbox'
+      = f.label :done, class: 'checkbox'
+  .field.is-grouped
+    .control
+      = f.submit class: 'button is-primary', data: { disable_with: 'Salvando...'}
+    .control
+      = link_to 'Cancelar', tasks_path, class: 'button is-light'

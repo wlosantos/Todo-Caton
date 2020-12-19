@@ -1,0 +1,7 @@
+%h1.title.size-4
+  -if @task.sub_task?
+    Editar sub-tareva
+  -else
+    Editar tarefa
+
+= render 'form', task: @task
